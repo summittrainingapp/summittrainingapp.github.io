@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summit — Privacy Policy</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.75;
+            color: #1c1c1e;
+            background: #F8FAFB;
+        }
+
+        /* ── Header ── */
+        .header {
+            background: linear-gradient(160deg, #0D1B2A 0%, #0f2236 100%);
+            padding: 52px 24px 44px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Subtle mountain silhouette behind the header */
+        .header::before {
+            content: "";
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 420px; height: 80px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 80'%3E%3Cpolygon points='0,80 90,20 180,55 260,5 350,45 420,80' fill='%232EADC7' opacity='0.06'/%3E%3Cpolygon points='0,80 70,35 160,65 240,18 330,55 420,80' fill='%232EADC7' opacity='0.05'/%3E%3C/svg%3E") center bottom no-repeat;
+            background-size: cover;
+            pointer-events: none;
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+        .header-logo svg {
+            opacity: 0.9;
+        }
+        .wordmark {
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: 10px;
+            color: #ffffff;
+        }
+        .wordmark span { color: #2EADC7; }
+        .tagline {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.35);
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+        .doc-badge {
+            display: inline-block;
+            background: rgba(46,173,199,0.12);
+            border: 1px solid rgba(46,173,199,0.28);
+            border-radius: 20px;
+            padding: 6px 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+        }
+
+        /* ── Date bar ── */
+        .date-bar {
+            background: #2EADC7;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 11px 24px;
+        }
+        .date-bar span {
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.92);
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Body container ── */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 56px 40px 100px;
+        }
+
+        /* ── Intro card ── */
+        .intro-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 48px;
+            border-left: 4px solid #2EADC7;
+            box-shadow: 0 2px 12px rgba(13,27,42,0.06);
+        }
+        .intro-card p {
+            color: #444;
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .intro-card strong { color: #0D1B2A; }
+
+        /* ── Section blocks ── */
+        .section-block {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 32px 36px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 8px rgba(13,27,42,0.05);
+        }
+        h2 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0D1B2A;
+            padding-bottom: 12px;
+            border-bottom: 1.5px solid #E2EDF0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2 .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            background: #2EADC7;
+            color: white;
+            font-size: 12px;
+            font-weight: 800;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        h3 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #4A6B7C;
+            margin-top: 22px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        p {
+            color: #3a3a3a;
+            margin-bottom: 12px;
+            font-size: 14.5px;
+        }
+        p:last-child { margin-bottom: 0; }
+
+        ul, ol {
+            padding-left: 22px;
+            margin-bottom: 12px;
+        }
+        li {
+            color: #3a3a3a;
+            margin-bottom: 6px;
+            font-size: 14.5px;
+        }
+        li strong { color: #0D1B2A; }
+
+        a {
+            color: #2EADC7;
+            text-decoration: none;
+        }
+        a:hover { text-decoration: underline; }
+
+        /* ── Highlight callout ── */
+        .callout {
+            background: #E8F7FB;
+            border: 1px solid #B3E3EF;
+            border-left: 4px solid #2EADC7;
+            border-radius: 0 8px 8px 0;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .callout p { margin: 0; font-size: 14px; color: #0D3A47; }
+        .callout strong { color: #1A8FA8; }
+
+        /* ── "We don't" list ── */
+        .dont-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .dont-list li {
+            padding: 7px 0 7px 30px;
+            position: relative;
+            border-bottom: 1px solid #E2EDF0;
+            font-size: 14px;
+        }
+        .dont-list li:last-child { border-bottom: none; }
+        .dont-list li::before {
+            content: "✕";
+            position: absolute;
+            left: 4px;
+            color: #cc3333;
+            font-weight: 700;
+            font-size: 12px;
+            top: 9px;
+        }
+
+        /* ── Compliance checklist ── */
+        .check-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .check-list li {
+            padding: 7px 0 7px 30px;
+            position: relative;
+            border-bottom: 1px solid #E2EDF0;
+            font-size: 14px;
+        }
+        .check-list li:last-child { border-bottom: none; }
+        .check-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 4px;
+            color: #2EADC7;
+            font-weight: 800;
+            font-size: 13px;
+            top: 8px;
+        }
+
+        /* ── Contact card ── */
+        .contact-card {
+            background: #0D1B2A;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-top: 40px;
+        }
+        .contact-card h2 {
+            color: #fff;
+            border-bottom-color: rgba(46,173,199,0.2);
+        }
+        .contact-card .num { background: #2EADC7; }
+        .contact-card p,
+        .contact-card span {
+            color: rgba(255,255,255,0.65);
+            font-size: 14px;
+        }
+        .contact-card a {
+            color: #2EADC7;
+            text-decoration: none;
+        }
+        .contact-card a:hover { text-decoration: underline; }
+        .contact-row {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(46,173,199,0.12);
+        }
+        .contact-row:last-child { border-bottom: none; }
+        .contact-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            min-width: 80px;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            padding: 48px 24px 32px;
+        }
+        .footer p {
+            font-size: 11px;
+            color: #9ab;
+            line-height: 1.6;
+        }
+        .footer-wordmark {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #4A6B7C;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 32px 20px 80px; }
+            .section-block { padding: 24px 22px; }
+            .date-bar { flex-direction: column; gap: 4px; align-items: center; }
+        }
+
+        @media print {
+            body { background: white; }
+            .header, .date-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .section-block { box-shadow: none; border: 1px solid #E2EDF0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── Header ── -->
+    <div class="header">
+        <div class="header-logo">
+            <svg width="28" height="22" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="14,1 26,21 2,21" fill="none" stroke="#2EADC7" stroke-width="1.8" stroke-linejoin="round"/>
+                <polygon points="8,21 16,9 24,21" fill="#2EADC7" opacity="0.25"/>
+            </svg>
+            <div class="wordmark">S<span>U</span>MMIT</div>
+        </div>
+        <div class="tagline">Your AI Training Coach</div>
+        <div class="doc-badge">Privacy Policy</div>
+    </div>
+    <div class="date-bar">
+        <span>Effective Date: April 7, 2026</span>
+        <span>Last Updated: April 11, 2026</span>
+    </div>
+
+    <!-- ── Body ── -->
+    <div class="container">
+
+        <div class="intro-card">
+            <p>Summit (<strong>"the App," "we," "our," or "us"</strong>) is a fitness coaching
+            application developed by <strong>Luke Migas</strong>. This Privacy Policy explains
+            what data Summit collects, how it is used and stored, who it is shared with, and what
+            choices you have regarding your data.</p>
+            <br>
+            <p><strong>The short version:</strong> Summit has no cloud backend, no advertising SDKs,
+            and no analytics trackers. Your data lives on your device. We do not sell it to anyone.</p>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="section-block">
+            <h2><span class="num">1</span> Data We Collect</h2>
+
+            <h3>1.1 — Apple HealthKit Data</h3>
+            <p>With your explicit permission, Summit reads the following data from Apple HealthKit:</p>
+            <ul>
+                <li><strong>Workout data:</strong> type, duration, distance, calories, heart rate, cycling power &amp; cadence, running power &amp; speed</li>
+                <li><strong>Heart &amp; recovery metrics:</strong> resting heart rate, HRV, VO2 max, blood oxygen (SpO2)</li>
+                <li><strong>Body metrics:</strong> body weight, body fat percentage</li>
+                <li><strong>Activity metrics:</strong> steps, flights climbed, active &amp; basal calories, distance</li>
+                <li><strong>Sleep data:</strong> sleep analysis (duration, stages)</li>
+                <li><strong>Reproductive health data:</strong> menstrual cycle tracking data, including cycle start dates, period duration, and cycle phase — used solely to provide cycle-aware coaching context (e.g. adjusting training intensity recommendations based on cycle phase)</li>
+            </ul>
+            <p>Reproductive health data is treated with the same protections as all other HealthKit data: it is stored only on your device, is never used for advertising, and is never sold or shared with third parties. It is sent to Anthropic's Claude API only as part of the core coaching function described in Section 2.1.</p>
+            <p>Summit <strong>only reads</strong> HealthKit data — it does not write anything back to HealthKit. You can change which categories you share at any time in <em>iOS Settings → Health → Data Access &amp; Devices → Summit</em>.</p>
+
+            <h3>1.2 — Profile Information You Provide</h3>
+            <p>During setup you may voluntarily provide your name, fitness level, training phase, goals, preferred activities, available equipment, coaching style preferences, and personal notes.</p>
+
+            <h3>1.3 — Workout &amp; Recovery Data You Enter</h3>
+            <p>You may also enter RPE ratings, workout notes, manually logged sessions, and recovery logs (sleep quality, energy ratings, wellness notes).</p>
+
+            <h3>1.4 — Device Location</h3>
+            <div class="callout">
+                <p><strong>Location is used transiently only.</strong> Summit accesses your location solely to retrieve local weather conditions for coaching context. It is not stored, not logged, and not transmitted to any server — it is used at the moment of the request and immediately discarded.</p>
+            </div>
+
+            <h3>1.5 — Claude API Key</h3>
+            <p>If you provide your own Anthropic Claude API key, it is stored exclusively in the iOS Keychain — Apple's hardware-backed encrypted credential store. It is never stored in plaintext and is never transmitted to anyone other than Anthropic's own API endpoint.</p>
+        </div>
+
+        <!-- Section 2 -->
+        <div class="section-block">
+            <h2><span class="num">2</span> How We Use Your Data</h2>
+
+            <h3>2.1 — AI-Powered Coaching (Core App Function)</h3>
+            <p>Summit's primary function is AI-generated personalized fitness coaching. To generate coaching responses, Summit sends relevant portions of the following data to <strong>Anthropic's Claude API</strong>:</p>
+            <ul>
+                <li>Your HealthKit health and workout metrics</li>
+                <li>Your profile information (fitness level, goals, preferences)</li>
+                <li>Your workout logs, RPE ratings, and notes</li>
+                <li>Your recovery logs and wellness notes</li>
+                <li>Current weather conditions derived from your location</li>
+            </ul>
+            <div class="callout">
+                <p><strong>This is the core function of Summit.</strong> Without sending this data to Anthropic's AI, Summit cannot provide coaching. By using Summit's coaching features you explicitly consent to this data transfer.</p>
+            </div>
+
+            <h3>2.2 — Local Storage</h3>
+            <p>All data is stored locally on your device using Apple's SwiftData framework. It is used to display your workout history, maintain coaching context across sessions, and personalize your experience over time.</p>
+
+            <h3>2.3 — What We Do NOT Do With Your Data</h3>
+            <ul class="dont-list">
+                <li>Use your data for advertising of any kind</li>
+                <li>Sell your data to any third party</li>
+                <li>Use Apple HealthKit data for advertising, marketing, or data mining</li>
+                <li>Share Apple HealthKit data with third parties for advertising or marketing</li>
+                <li>Operate any analytics or tracking SDKs</li>
+                <li>Profile you for purposes unrelated to fitness coaching</li>
+            </ul>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section-block">
+            <h2><span class="num">3</span> Apple HealthKit Compliance</h2>
+            <p>In accordance with Apple's HealthKit guidelines, Summit confirms the following:</p>
+            <ul class="check-list">
+                <li>Summit does <strong>not</strong> use HealthKit data for advertising purposes</li>
+                <li>Summit does <strong>not</strong> sell HealthKit data to advertising platforms, data brokers, or information resellers</li>
+                <li>Summit does <strong>not</strong> share HealthKit data with third parties for advertising or marketing</li>
+                <li>HealthKit data is shared with Anthropic's Claude API solely to provide the App's core fitness coaching functionality</li>
+                <li>HealthKit data is stored only on your device — never on any Summit-operated server</li>
+                <li>Reproductive health and menstrual cycle data is <strong>never</strong> used for advertising, never sold, and never shared with any third party for any purpose other than generating your personalized coaching content</li>
+            </ul>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section-block">
+            <h2><span class="num">4</span> Third-Party Services</h2>
+
+            <h3>4.1 — Anthropic (Claude AI)</h3>
+            <p>Summit sends health metrics, workout data, recovery data, and profile information to Anthropic's Claude API to generate coaching content. Anthropic processes this data under their own privacy policy, available at <a href="https://www.anthropic.com/privacy">anthropic.com/privacy</a>.</p>
+            <p>Summit does not control how Anthropic handles data once received. We encourage you to review Anthropic's privacy policy to understand their data practices.</p>
+
+            <h3>4.2 — Apple HealthKit</h3>
+            <p>Summit reads HealthKit data based on the permissions you grant. Apple's own privacy policy governs HealthKit. Manage permissions anytime in iOS Settings.</p>
+
+            <h3>4.3 — No Other Third Parties</h3>
+            <p>Summit does not integrate with any advertising networks, analytics services, social media platforms, crash reporting tools, or other third-party SDKs beyond those listed above.</p>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section-block">
+            <h2><span class="num">5</span> Data Storage &amp; Security</h2>
+
+            <h3>5.1 — Local-Only Storage</h3>
+            <p><strong>Summit does not operate any server, cloud database, or remote backend.</strong> All Summit data is stored locally on your device. Your data does not leave your device except when sent to Anthropic's Claude API for coaching generation.</p>
+
+            <h3>5.2 — API Key Security</h3>
+            <p>If you provide a Claude API key, it is stored in the iOS Keychain, which uses hardware-backed encryption on supported devices. The key is never stored in plaintext and is used only to authenticate requests to Anthropic.</p>
+
+            <h3>5.3 — Data in Transit</h3>
+            <p>All data transmitted to Anthropic's Claude API is sent over HTTPS using TLS-encrypted connections.</p>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="section-block">
+            <h2><span class="num">6</span> Data Retention</h2>
+
+            <h3>6.1 — On Your Device</h3>
+            <p>Summit retains your data on your device for as long as the App is installed. Because all storage is local, your data persists until you take action to remove it.</p>
+
+            <h3>6.2 — Data Sent to Anthropic</h3>
+            <p>Data sent to Anthropic's Claude API is subject to Anthropic's retention policies. See <a href="https://www.anthropic.com/privacy">anthropic.com/privacy</a> for details.</p>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="section-block">
+            <h2><span class="num">7</span> Your Choices &amp; Rights</h2>
+
+            <h3>7.1 — HealthKit Permissions</h3>
+            <p>Grant or revoke any HealthKit data category at any time via <em>iOS Settings → Health → Data Access &amp; Devices → Summit</em>.</p>
+
+            <h3>7.2 — Location Permissions</h3>
+            <p>Grant or revoke location access anytime in iOS Settings. Revoking location disables weather-aware coaching; all other features continue to function normally.</p>
+
+            <h3>7.3 — Clear Coach Memory</h3>
+            <p>Clear the AI coach's conversation memory at any time from within <em>Summit → Settings</em>. This removes all stored coaching context used to personalize ongoing conversations.</p>
+
+            <h3>7.4 — Reset Your Profile</h3>
+            <p>Reset your profile information at any time from within <em>Summit → Settings</em>.</p>
+
+            <h3>7.5 — Delete All Data</h3>
+            <p>Delete all Summit data by deleting the App from your device. Uninstalling Summit removes all locally stored data — including your profile, workout history, recovery logs, coaching conversations, and any stored API key.</p>
+
+            <h3>7.6 — Questions</h3>
+            <p>Contact us at <a href="mailto:summit.training.app@gmail.com">summit.training.app@gmail.com</a> with any questions about your data.</p>
+        </div>
+
+        <!-- Section 8 -->
+        <div class="section-block">
+            <h2><span class="num">8</span> Children's Privacy</h2>
+            <p>Summit is intended for users who are 18 years of age or older. We do not knowingly collect personal information from anyone under the age of 18. If you are under 18, do not use Summit. If you are a parent or guardian and believe your child has provided data to Summit, please contact us at <a href="mailto:summit.training.app@gmail.com">summit.training.app@gmail.com</a> and we will promptly remove their information.</p>
+        </div>
+
+        <!-- Section 9 -->
+        <div class="section-block">
+            <h2><span class="num">9</span> Changes to This Policy</h2>
+            <p>We may update this Privacy Policy from time to time. When we make material changes, we will update the "Last Updated" date at the top of this document and, where appropriate, notify you through the App. Your continued use of Summit after any changes constitutes your acceptance of the updated Privacy Policy.</p>
+        </div>
+
+        <!-- Section 10 — Contact -->
+        <div class="contact-card">
+            <h2><span class="num">10</span> Contact Us</h2>
+            <br>
+            <div class="contact-row">
+                <span class="contact-label">Developer</span>
+                <span>Luke Migas</span>
+            </div>
+            <div class="contact-row">
+                <span class="contact-label">Email</span>
+                <a href="mailto:summit.training.app@gmail.com">summit.training.app@gmail.com</a>
+            </div>
+            <div class="contact-row">
+                <span class="contact-label">Website</span>
+                <span>N/A</span>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ── Footer ── -->
+    <div class="footer">
+        <p>This Privacy Policy applies solely to Summit and does not apply to any third-party<br>services, websites, or applications linked from within the App.</p>
+        <br>
+        <p class="footer-wordmark">SUMMIT &nbsp;·&nbsp; Your AI Training Coach</p>
+    </div>
+
+</body>
+</html>

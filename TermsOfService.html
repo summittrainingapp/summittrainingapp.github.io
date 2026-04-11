@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summit — Terms of Service</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.75;
+            color: #1c1c1e;
+            background: #F8FAFB;
+        }
+
+        /* ── Header ── */
+        .header {
+            background: linear-gradient(160deg, #0D1B2A 0%, #0f2236 100%);
+            padding: 52px 24px 44px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: "";
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 420px; height: 80px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 420 80'%3E%3Cpolygon points='0,80 90,20 180,55 260,5 350,45 420,80' fill='%232EADC7' opacity='0.06'/%3E%3Cpolygon points='0,80 70,35 160,65 240,18 330,55 420,80' fill='%232EADC7' opacity='0.05'/%3E%3C/svg%3E") center bottom no-repeat;
+            background-size: cover;
+            pointer-events: none;
+        }
+        .header-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+        .wordmark {
+            font-size: 30px;
+            font-weight: 900;
+            letter-spacing: 10px;
+            color: #ffffff;
+        }
+        .wordmark span { color: #2EADC7; }
+        .tagline {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,0.35);
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+        .doc-badge {
+            display: inline-block;
+            background: rgba(46,173,199,0.12);
+            border: 1px solid rgba(46,173,199,0.28);
+            border-radius: 20px;
+            padding: 6px 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+        }
+
+        /* ── Date bar ── */
+        .date-bar {
+            background: #2EADC7;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            padding: 11px 24px;
+        }
+        .date-bar span {
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.92);
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Body container ── */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 56px 40px 100px;
+        }
+
+        /* ── Intro card ── */
+        .intro-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 20px;
+            border-left: 4px solid #2EADC7;
+            box-shadow: 0 2px 12px rgba(13,27,42,0.06);
+        }
+        .intro-card p {
+            color: #444;
+            margin: 0;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .intro-card strong { color: #0D1B2A; }
+
+        /* ── Medical disclaimer banner — intentionally red, safety-critical ── */
+        .medical-banner {
+            background: #fff3f3;
+            border: 1.5px solid #f5c0c0;
+            border-left: 5px solid #cc2222;
+            border-radius: 0 10px 10px 0;
+            padding: 24px 28px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(200,0,0,0.07);
+        }
+        .medical-banner .banner-title {
+            font-size: 15px;
+            font-weight: 800;
+            color: #aa1111;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .medical-banner .banner-title::before {
+            content: "⚠";
+            font-size: 16px;
+        }
+        .medical-banner p {
+            font-size: 14px;
+            color: #4a1010;
+            margin-bottom: 10px;
+            line-height: 1.65;
+        }
+        .medical-banner p:last-child { margin-bottom: 0; }
+        .medical-banner strong { color: #880000; }
+        .medical-banner .subsection {
+            display: flex;
+            gap: 10px;
+            padding: 8px 0;
+            border-top: 1px solid rgba(200,0,0,0.12);
+        }
+        .medical-banner .subsection-num {
+            font-size: 11px;
+            font-weight: 800;
+            color: #cc2222;
+            min-width: 28px;
+            padding-top: 2px;
+        }
+        .medical-banner .subsection p { margin: 0; }
+
+        /* ── Section blocks ── */
+        .section-block {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 32px 36px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 8px rgba(13,27,42,0.05);
+        }
+        h2 {
+            font-size: 17px;
+            font-weight: 700;
+            color: #0D1B2A;
+            padding-bottom: 12px;
+            border-bottom: 1.5px solid #E2EDF0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        h2 .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            background: #2EADC7;
+            color: white;
+            font-size: 12px;
+            font-weight: 800;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        h3 {
+            font-size: 13px;
+            font-weight: 700;
+            color: #4A6B7C;
+            margin-top: 22px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+        p {
+            color: #3a3a3a;
+            margin-bottom: 12px;
+            font-size: 14.5px;
+        }
+        p:last-child { margin-bottom: 0; }
+
+        ul, ol {
+            padding-left: 22px;
+            margin-bottom: 12px;
+        }
+        li {
+            color: #3a3a3a;
+            margin-bottom: 6px;
+            font-size: 14.5px;
+        }
+        li strong { color: #0D1B2A; }
+
+        a {
+            color: #2EADC7;
+            text-decoration: none;
+        }
+        a:hover { text-decoration: underline; }
+
+        /* ── Highlight callout ── */
+        .callout {
+            background: #E8F7FB;
+            border: 1px solid #B3E3EF;
+            border-left: 4px solid #2EADC7;
+            border-radius: 0 8px 8px 0;
+            padding: 14px 18px;
+            margin: 16px 0;
+        }
+        .callout p { margin: 0; font-size: 14px; color: #0D3A47; }
+        .callout strong { color: #1A8FA8; }
+
+        /* ── Liability block ── */
+        .liability-block {
+            background: #F8FAFB;
+            border: 1px solid #E2EDF0;
+            border-radius: 8px;
+            padding: 18px 22px;
+            margin: 16px 0;
+        }
+        .liability-block p {
+            font-size: 13px;
+            color: #4A6B7C;
+            font-weight: 600;
+            line-height: 1.6;
+            margin: 0;
+        }
+        .liability-block ul {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .liability-block li {
+            font-size: 13px;
+            font-weight: 600;
+            color: #4A6B7C;
+        }
+
+        /* ── Permitted / prohibited lists ── */
+        .permitted-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .permitted-list li {
+            padding: 7px 0 7px 30px;
+            position: relative;
+            border-bottom: 1px solid #E2EDF0;
+            font-size: 14px;
+        }
+        .permitted-list li:last-child { border-bottom: none; }
+        .permitted-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 4px;
+            color: #2EADC7;
+            font-weight: 800;
+            font-size: 13px;
+            top: 9px;
+        }
+
+        .prohibited-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .prohibited-list li {
+            padding: 7px 0 7px 30px;
+            position: relative;
+            border-bottom: 1px solid #E2EDF0;
+            font-size: 14px;
+        }
+        .prohibited-list li:last-child { border-bottom: none; }
+        .prohibited-list li::before {
+            content: "✕";
+            position: absolute;
+            left: 4px;
+            color: #cc3333;
+            font-weight: 700;
+            font-size: 12px;
+            top: 9px;
+        }
+
+        /* ── Contact card ── */
+        .contact-card {
+            background: #0D1B2A;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-top: 40px;
+        }
+        .contact-card h2 {
+            color: #fff;
+            border-bottom-color: rgba(46,173,199,0.2);
+        }
+        .contact-card .num { background: #2EADC7; }
+        .contact-card p,
+        .contact-card span {
+            color: rgba(255,255,255,0.65);
+            font-size: 14px;
+        }
+        .contact-card a {
+            color: #2EADC7;
+            text-decoration: none;
+        }
+        .contact-card a:hover { text-decoration: underline; }
+        .contact-row {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(46,173,199,0.12);
+        }
+        .contact-row:last-child { border-bottom: none; }
+        .contact-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.35);
+            min-width: 80px;
+        }
+
+        /* ── Acknowledgement ── */
+        .ack-block {
+            background: #0D1B2A;
+            border-radius: 12px;
+            padding: 24px 32px;
+            margin-top: 20px;
+            text-align: center;
+            border: 1px solid rgba(46,173,199,0.18);
+        }
+        .ack-block p {
+            color: rgba(255,255,255,0.55);
+            font-size: 13px;
+            font-style: italic;
+            margin: 0;
+        }
+
+        /* ── Footer ── */
+        .footer {
+            text-align: center;
+            padding: 48px 24px 32px;
+        }
+        .footer p {
+            font-size: 11px;
+            color: #9ab;
+            line-height: 1.6;
+        }
+        .footer-wordmark {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #4A6B7C;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 32px 20px 80px; }
+            .section-block { padding: 24px 22px; }
+            .date-bar { flex-direction: column; gap: 4px; align-items: center; }
+            .medical-banner { padding: 18px 20px; }
+        }
+
+        @media print {
+            body { background: white; }
+            .header, .date-bar { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+            .section-block { box-shadow: none; border: 1px solid #E2EDF0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── Header ── -->
+    <div class="header">
+        <div class="header-logo">
+            <svg width="28" height="22" viewBox="0 0 28 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="14,1 26,21 2,21" fill="none" stroke="#2EADC7" stroke-width="1.8" stroke-linejoin="round"/>
+                <polygon points="8,21 16,9 24,21" fill="#2EADC7" opacity="0.25"/>
+            </svg>
+            <div class="wordmark">S<span>U</span>MMIT</div>
+        </div>
+        <div class="tagline">Your AI Training Coach</div>
+        <div class="doc-badge">Terms of Service</div>
+    </div>
+    <div class="date-bar">
+        <span>Effective Date: April 7, 2026</span>
+        <span>Last Updated: April 11, 2026</span>
+    </div>
+
+    <!-- ── Body ── -->
+    <div class="container">
+
+        <!-- Intro -->
+        <div class="intro-card">
+            <p>These Terms of Service (<strong>"Terms"</strong>) govern your use of the Summit mobile
+            application (<strong>"the App," "Summit"</strong>) developed by <strong>Luke Migas</strong>
+            (<strong>"Developer," "we," "our," or "us"</strong>). By downloading, installing, or using Summit,
+            you agree to be bound by these Terms. If you do not agree, do not use Summit.</p>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="section-block">
+            <h2><span class="num">1</span> Description of Service</h2>
+            <p>Summit is an AI-powered fitness coaching application for iOS. Summit allows you to log workouts, set fitness goals, track recovery metrics, and receive personalized coaching content generated by artificial intelligence.</p>
+            <p>Summit's AI coaching is powered by Anthropic's Claude API. When you use Summit's coaching features, your workout data, health metrics, and profile information are sent to Anthropic's servers to generate coaching responses. This is the core function of the App.</p>
+        </div>
+
+        <!-- Section 2 — Medical Disclaimer (intentionally red — safety-critical) -->
+        <div class="medical-banner">
+            <div class="banner-title">Section 2 — Not Medical Advice — Please Read Carefully</div>
+
+            <div class="subsection">
+                <div class="subsection-num">2.1</div>
+                <p>Summit is a <strong>fitness coaching tool</strong>. It is <strong>not a medical device</strong>, is <strong>not a medical application</strong>, and is <strong>not a substitute for professional medical advice, diagnosis, or treatment</strong>.</p>
+            </div>
+            <div class="subsection">
+                <div class="subsection-num">2.2</div>
+                <p>Nothing in Summit — including training plans, workout recommendations, recovery guidance, daily briefings, post-workout debriefs, or coaching conversations — constitutes medical advice or a medical recommendation.</p>
+            </div>
+            <div class="subsection">
+                <div class="subsection-num">2.3</div>
+                <p>Summit's AI coach is an artificial intelligence. It has no medical training, credentials, or clinical judgment. It generates fitness coaching content based on patterns in data. It does not diagnose conditions, prescribe treatments, or provide medical opinions.</p>
+            </div>
+            <div class="subsection">
+                <div class="subsection-num">2.4</div>
+                <p><strong>You should consult a qualified healthcare professional before beginning any new exercise program</strong>, especially if you have pre-existing medical conditions, injuries, cardiovascular conditions, or other health concerns.</p>
+            </div>
+            <div class="subsection">
+                <div class="subsection-num">2.5</div>
+                <p>If you experience chest pain, dizziness, shortness of breath, or any other symptoms during exercise, <strong>stop exercising immediately and seek medical attention.</strong> Do not rely on Summit to assess or respond to medical emergencies. In an emergency, call your local emergency services.</p>
+            </div>
+            <div class="subsection">
+                <div class="subsection-num">2.6</div>
+                <p>Summit reads health data from Apple HealthKit to inform fitness coaching. This data is used for coaching context only — Summit does <strong>not</strong> interpret it as a medical diagnostic tool. Abnormal readings should be discussed with your physician.</p>
+            </div>
+            <div class="subsection">
+                <div class="subsection-num">2.7</div>
+                <p>By using Summit, you acknowledge you are <strong>solely responsible for your own health, safety, and well-being</strong>, and you assume all risks associated with following any exercise or recovery recommendations provided by the App.</p>
+            </div>
+        </div>
+
+        <!-- Section 3 -->
+        <div class="section-block">
+            <h2><span class="num">3</span> AI-Generated Content</h2>
+
+            <h3>3.1 — Nature of AI Coaching</h3>
+            <p>Summit's coaching content — including training plans, workout recommendations, recovery guidance, debriefs, briefings, and conversational responses — is generated by Anthropic's Claude AI model algorithmically based on your data and the model's training.</p>
+
+            <h3>3.2 — Accuracy &amp; Limitations</h3>
+            <p>AI-generated coaching content <strong>may not always be accurate, appropriate, or optimal for your individual circumstances.</strong> AI models can produce responses that are:</p>
+            <ul>
+                <li>Incorrect or based on flawed reasoning</li>
+                <li>Not well-suited to your specific fitness level, injury history, or physical limitations</li>
+                <li>Inconsistent over time</li>
+                <li>Overly aggressive or insufficiently cautious for your situation</li>
+            </ul>
+            <div class="callout">
+                <p>Exercise your own judgment when following any AI-generated recommendation. If a recommendation does not feel right, causes pain, or conflicts with your physician or qualified trainer — <strong>do not follow it.</strong></p>
+            </div>
+
+            <h3>3.3 — No Guarantee of Results</h3>
+            <p>Summit does not guarantee any specific fitness outcomes, performance improvements, or health results. Individual results vary based on genetics, adherence, nutrition, sleep, stress, and many other variables outside the App's control.</p>
+        </div>
+
+        <!-- Section 4 -->
+        <div class="section-block">
+            <h2><span class="num">4</span> Eligibility &amp; Account Responsibility</h2>
+
+            <h3>4.1 — Age Requirement</h3>
+            <p>You must be at least 18 years old to use Summit. By using Summit, you represent and warrant that you are 18 years of age or older. If you are under 18, do not download or use Summit.</p>
+
+            <h3>4.2 — API Key</h3>
+            <p>Summit may require a Claude API key from Anthropic to function. If you provide your own API key, you are responsible for:</p>
+            <ul>
+                <li>Keeping your API key confidential</li>
+                <li>Any usage charges incurred through Anthropic's API as a result of using Summit</li>
+                <li>Complying with Anthropic's terms of service for API usage</li>
+            </ul>
+            <p>Summit stores your API key in the iOS Keychain and uses it solely to authenticate requests to Anthropic on your behalf. Summit is not responsible for charges incurred through your Anthropic account.</p>
+        </div>
+
+        <!-- Section 5 -->
+        <div class="section-block">
+            <h2><span class="num">5</span> Acceptable Use</h2>
+
+            <h3>5.1 — Permitted Use</h3>
+            <ul class="permitted-list">
+                <li>Log and track your workouts and recovery</li>
+                <li>Receive AI-generated fitness coaching, training plans, and guidance</li>
+                <li>Monitor your fitness progress and health trends</li>
+                <li>Set and manage fitness goals</li>
+            </ul>
+
+            <h3>5.2 — Prohibited Use</h3>
+            <ul class="prohibited-list">
+                <li>Use Summit as a substitute for professional medical advice or treatment</li>
+                <li>Rely on Summit to assess, diagnose, or treat any medical condition</li>
+                <li>Attempt to reverse-engineer, decompile, or extract the source code of Summit</li>
+                <li>Use Summit to generate harmful, abusive, or policy-violating content</li>
+                <li>Circumvent any technical restrictions or safety measures in the App</li>
+                <li>Use Summit in any manner that violates applicable law</li>
+                <li>Redistribute, resell, or sublicense Summit or its generated content</li>
+                <li>Use Summit's AI coaching to provide coaching services to others as if the output were your own professional advice</li>
+            </ul>
+        </div>
+
+        <!-- Section 6 -->
+        <div class="section-block">
+            <h2><span class="num">6</span> Intellectual Property</h2>
+
+            <h3>6.1 — The App</h3>
+            <p>Summit, including its design, code, user interface, and branding, is the intellectual property of Luke Migas and is protected by applicable intellectual property laws. These Terms do not grant you any ownership rights in the App.</p>
+
+            <h3>6.2 — AI-Generated Content</h3>
+            <p>Coaching content generated by Summit's AI is produced by Anthropic's Claude model in response to your data. You may use this content for your personal fitness purposes. The intellectual property status of AI-generated content is an evolving area of law, and we make no representations about ownership of AI-generated coaching text.</p>
+
+            <h3>6.3 — Your Data</h3>
+            <p>You retain ownership of all data you provide to Summit, including your profile information, workout logs, recovery notes, and any other content you create within the App.</p>
+        </div>
+
+        <!-- Section 7 -->
+        <div class="section-block">
+            <h2><span class="num">7</span> Privacy</h2>
+            <p>Summit's collection, use, and sharing of your data is governed by our <strong>Privacy Policy</strong>. By using Summit, you agree to the data practices described in the Privacy Policy.</p>
+            <ul>
+                <li>Your health and fitness data is sent to Anthropic's Claude API to generate coaching content</li>
+                <li>All data is stored locally on your device — Summit has no cloud backend</li>
+                <li>Summit does not use your data for advertising and does not sell your data</li>
+                <li>HealthKit data is not used for advertising and is not sold to third parties</li>
+            </ul>
+        </div>
+
+        <!-- Section 8 -->
+        <div class="section-block">
+            <h2><span class="num">8</span> Third-Party Services</h2>
+
+            <h3>8.1 — Anthropic</h3>
+            <p>Summit depends on Anthropic's Claude API to provide coaching functionality. Anthropic is an independent third party. Your use of Summit's coaching features is also subject to Anthropic's terms of service and privacy policy at <a href="https://www.anthropic.com">anthropic.com</a>.</p>
+            <p>We do not control Anthropic's services. If Anthropic's API is unavailable, changes its terms, or discontinues service, Summit's coaching features may be degraded or unavailable. We are not responsible for the availability, performance, or conduct of Anthropic's services.</p>
+
+            <h3>8.2 — Apple HealthKit</h3>
+            <p>Summit's integration with Apple HealthKit is subject to Apple's terms and conditions. We are not responsible for the accuracy or availability of data provided by HealthKit.</p>
+        </div>
+
+        <!-- Section 9 -->
+        <div class="section-block">
+            <h2><span class="num">9</span> Disclaimers &amp; Limitation of Liability</h2>
+
+            <h3>9.1 — "AS IS" Disclaimer</h3>
+            <div class="liability-block">
+                <p>SUMMIT IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.</p>
+            </div>
+            <p>We do not warrant that Summit will meet your requirements; will be uninterrupted, timely, or error-free; that AI-generated content will be accurate or appropriate; that fitness results will be achieved; or that defects will be corrected.</p>
+
+            <h3>9.2 — Limitation of Liability</h3>
+            <div class="liability-block">
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, LUKE MIGAS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO:</p>
+                <ul>
+                    <li>Personal injury or health consequences from following AI-generated coaching</li>
+                    <li>Loss of data, profits, or revenue</li>
+                    <li>Damages arising from reliance on AI-generated content</li>
+                    <li>Damages from the unavailability of third-party services (including Anthropic's API)</li>
+                </ul>
+                <br>
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, LUKE MIGAS'S TOTAL CUMULATIVE LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR THE APP, OR FIFTY U.S. DOLLARS ($50.00), WHICHEVER IS GREATER.</p>
+            </div>
+
+            <h3>9.3 — Assumption of Risk</h3>
+            <p>You acknowledge that physical exercise involves inherent risks, including risk of injury, illness, disability, and death. You voluntarily assume all risks associated with your use of Summit and any exercise undertaken based on Summit's content.</p>
+        </div>
+
+        <!-- Section 10 -->
+        <div class="section-block">
+            <h2><span class="num">10</span> Indemnification</h2>
+            <p>You agree to indemnify, defend, and hold harmless Luke Migas from and against any and all claims, liabilities, damages, losses, costs, and expenses (including reasonable attorneys' fees) arising out of or in connection with:</p>
+            <ul>
+                <li>Your use of Summit</li>
+                <li>Your violation of these Terms</li>
+                <li>Your reliance on AI-generated coaching content</li>
+                <li>Any injury or damage arising from exercise undertaken based on Summit's content</li>
+                <li>Your violation of any applicable law or regulation</li>
+            </ul>
+        </div>
+
+        <!-- Section 11 -->
+        <div class="section-block">
+            <h2><span class="num">11</span> Termination</h2>
+
+            <h3>11.1 — Your Right to Terminate</h3>
+            <p>You may stop using Summit at any time by deleting the App from your device. Deleting the App removes all locally stored data.</p>
+
+            <h3>11.2 — Our Right to Terminate</h3>
+            <p>We reserve the right to discontinue Summit or any of its features at any time, with or without notice. We are not obligated to maintain, update, or support the App indefinitely.</p>
+
+            <h3>11.3 — Effect of Termination</h3>
+            <p>Upon termination, your right to use Summit ceases. Sections 2 (Not Medical Advice), 9 (Disclaimers and Limitation of Liability), 10 (Indemnification), and 13 (Governing Law) survive termination.</p>
+        </div>
+
+        <!-- Section 12 -->
+        <div class="section-block">
+            <h2><span class="num">12</span> Changes to These Terms</h2>
+            <p>We may modify these Terms at any time. When we make material changes, we will update the "Last Updated" date at the top of this document. Your continued use of Summit after changes are posted constitutes your acceptance of the revised Terms. If you do not agree with the revised Terms, you must stop using Summit.</p>
+        </div>
+
+        <!-- Section 13 -->
+        <div class="section-block">
+            <h2><span class="num">13</span> Governing Law &amp; Dispute Resolution</h2>
+            <p>These Terms are governed by and construed in accordance with the laws of <strong>Arizona</strong>, without regard to its conflict of law provisions.</p>
+            <p>Any dispute arising out of or relating to these Terms or your use of Summit shall be resolved in the courts of <strong>Arizona</strong>, and you consent to the personal jurisdiction of such courts.</p>
+        </div>
+
+        <!-- Section 14 -->
+        <div class="section-block">
+            <h2><span class="num">14</span> Severability</h2>
+            <p>If any provision of these Terms is found to be unenforceable or invalid, that provision shall be enforced to the maximum extent permissible, and the remaining provisions shall remain in full force and effect.</p>
+        </div>
+
+        <!-- Section 15 -->
+        <div class="section-block">
+            <h2><span class="num">15</span> Entire Agreement</h2>
+            <p>These Terms, together with the Privacy Policy, constitute the entire agreement between you and Luke Migas regarding your use of Summit and supersede any prior agreements or understandings.</p>
+        </div>
+
+        <!-- Section 16 — Contact -->
+        <div class="contact-card">
+            <h2><span class="num">16</span> Contact Us</h2>
+            <br>
+            <div class="contact-row">
+                <span class="contact-label">Developer</span>
+                <span>Luke Migas</span>
+            </div>
+            <div class="contact-row">
+                <span class="contact-label">Email</span>
+                <a href="mailto:summit.training.app@gmail.com">summit.training.app@gmail.com</a>
+            </div>
+            <div class="contact-row">
+                <span class="contact-label">Website</span>
+                <span>N/A</span>
+            </div>
+        </div>
+
+        <!-- Acknowledgement -->
+        <div class="ack-block">
+            <p>By using Summit, you acknowledge that you have read, understood, and agree to be bound by these Terms of Service.</p>
+        </div>
+
+    </div>
+
+    <!-- ── Footer ── -->
+    <div class="footer">
+        <p>These Terms of Service govern your use of the Summit iOS application only<br>and do not apply to any third-party services linked from within the App.</p>
+        <br>
+        <p class="footer-wordmark">SUMMIT &nbsp;·&nbsp; Your AI Training Coach</p>
+    </div>
+
+</body>
+</html>
