@@ -403,7 +403,7 @@
     </div>
     <div class="date-bar">
         <span>Effective Date: April 7, 2026</span>
-        <span>Last Updated: April 11, 2026</span>
+        <span>Last Updated: May 28, 2026</span>
     </div>
 
     <!-- ── Body ── -->
@@ -496,6 +496,16 @@
                 <li>Complying with Anthropic's terms of service for API usage</li>
             </ul>
             <p>Summit stores your API key in the iOS Keychain and uses it solely to authenticate requests to Anthropic on your behalf. Summit is not responsible for charges incurred through your Anthropic account.</p>
+
+            <h3>4.3 — Subscription, Trial, Billing, and Refunds</h3>
+            <p>Summit offers an auto-renewing monthly subscription that includes a quota of AI coach interactions per billing month. Bringing your own Anthropic Claude API key (Section 4.2) is an alternative; you do not need a subscription if you supply your own key.</p>
+            <p><strong>Free Trial.</strong> New subscribers may be eligible for a free introductory trial period (two weeks at launch; the current trial length is shown in-App on the subscription screen at the time you subscribe). The trial begins when you start the subscription. If you do not cancel before the trial ends, the subscription converts automatically to a paid subscription at the price shown on the subscription screen, and you will be charged through your Apple ID.</p>
+            <p><strong>Auto-Renewal.</strong> Subscriptions auto-renew at the end of each billing period at the then-current rate unless you cancel at least 24 hours before the end of the current period. The renewal charge is processed by Apple within 24 hours before the end of the current period.</p>
+            <p><strong>Managing or Cancelling.</strong> You can view, manage, or cancel your subscription at any time in <em>iOS Settings → [Your Name] → Subscriptions → Summit</em>. Cancelling stops future auto-renewal; you keep access to subscriber features until the end of the current paid period. Summit cannot cancel or refund a subscription on your behalf — these actions are handled by Apple.</p>
+            <p><strong>Price Changes.</strong> If we change the subscription price, Apple will notify you in advance through the standard App Store mechanism. You may accept the new price or cancel before the change takes effect.</p>
+            <p><strong>Refunds.</strong> All billing is handled by Apple under the standard Apple Media Services terms. Refunds, if any, are issued by Apple at Apple's discretion under those terms — Summit does not directly issue refunds. Refund requests are made through <em>reportaproblem.apple.com</em>.</p>
+            <p><strong>Coach Message Quota.</strong> Each monthly billing period includes a quota of AI coach interactions, as displayed in the App. If you exhaust the quota before the period ends, AI coach interactions will be paused for the remainder of that period unless you supply your own Anthropic API key. The quota resets at the start of each new billing period.</p>
+            <p><strong>Subscriptions Are Required for Some Features Only.</strong> Subscription gives you access to AI coaching features. Other App features (workout logging, recovery logging, history viewing) do not require a subscription.</p>
         </div>
 
         <!-- Section 5 -->
@@ -543,7 +553,8 @@
             <p>Summit's collection, use, and sharing of your data is governed by our <strong>Privacy Policy</strong>. By using Summit, you agree to the data practices described in the Privacy Policy.</p>
             <ul>
                 <li>Your health and fitness data is sent to Anthropic's Claude API to generate coaching content</li>
-                <li>All data is stored locally on your device — Summit has no cloud backend</li>
+                <li>Your data is stored on your device and (if iCloud is enabled) in your personal Apple iCloud account — Summit operates no server of its own</li>
+                <li>Anonymized crash and error reports are sent to Sentry so we can diagnose App failures (no health data, no name, no IP)</li>
                 <li>Summit does not use your data for advertising and does not sell your data</li>
                 <li>HealthKit data is not used for advertising and is not sold to third parties</li>
             </ul>
@@ -557,8 +568,11 @@
             <p>Summit depends on Anthropic's Claude API to provide coaching functionality. Anthropic is an independent third party. Your use of Summit's coaching features is also subject to Anthropic's terms of service and privacy policy at <a href="https://www.anthropic.com">anthropic.com</a>.</p>
             <p>We do not control Anthropic's services. If Anthropic's API is unavailable, changes its terms, or discontinues service, Summit's coaching features may be degraded or unavailable. We are not responsible for the availability, performance, or conduct of Anthropic's services.</p>
 
-            <h3>8.2 — Apple HealthKit</h3>
-            <p>Summit's integration with Apple HealthKit is subject to Apple's terms and conditions. We are not responsible for the accuracy or availability of data provided by HealthKit.</p>
+            <h3>8.2 — Apple HealthKit, iCloud, and the App Store</h3>
+            <p>Summit's integration with Apple HealthKit, Apple iCloud (for cross-device sync), and the App Store (for subscription billing) is subject to Apple's terms and conditions. We are not responsible for the accuracy or availability of data provided by Apple's services. Refunds and billing are handled exclusively by Apple under Apple Media Services terms (see Section 4.3).</p>
+
+            <h3>8.3 — Sentry (Crash Reporting)</h3>
+            <p>Summit uses Sentry's crash-reporting service to receive diagnostic reports when the App crashes or encounters non-fatal errors. Sentry receives anonymized stack traces, device model, OS version, app version, breadcrumb trails, and non-identifying app-state tags. Sentry does not receive your name, IP address, HealthKit data, workout content, or coaching conversations. Crash reporting is integral to App quality and is not user-configurable. Your use of Summit is subject to Sentry's privacy policy at <a href="https://sentry.io/privacy/">sentry.io/privacy</a>.</p>
         </div>
 
         <!-- Section 9 -->
