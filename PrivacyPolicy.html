@@ -318,7 +318,7 @@
     </div>
     <div class="date-bar">
         <span>Effective Date: April 7, 2026</span>
-        <span>Last Updated: April 11, 2026</span>
+        <span>Last Updated: May 28, 2026</span>
     </div>
 
     <!-- ── Body ── -->
@@ -330,8 +330,7 @@
             what data Summit collects, how it is used and stored, who it is shared with, and what
             choices you have regarding your data.</p>
             <br>
-            <p><strong>The short version:</strong> Summit has no cloud backend, no advertising SDKs,
-            and no analytics trackers. Your data lives on your device. We do not sell it to anyone.</p>
+            <p><strong>The short version:</strong> Summit has no advertising SDKs and no analytics trackers. We do not operate any server, sell your data, or use it for advertising. The only services that ever receive your data are Anthropic's Claude API (so the AI coach can generate coaching content), Apple iCloud (so your data syncs across your own Apple devices, if you have iCloud enabled), and Sentry (so we receive anonymized crash reports when the App breaks). Sections 4.1, 4.3, and 4.4 explain each in detail.</p>
         </div>
 
         <!-- Section 1 -->
@@ -349,7 +348,7 @@
                 <li><strong>Reproductive health data:</strong> menstrual cycle tracking data, including cycle start dates, period duration, and cycle phase — used solely to provide cycle-aware coaching context (e.g. adjusting training intensity recommendations based on cycle phase)</li>
             </ul>
             <p>Reproductive health data is treated with the same protections as all other HealthKit data: it is stored only on your device, is never used for advertising, and is never sold or shared with third parties. It is sent to Anthropic's Claude API only as part of the core coaching function described in Section 2.1.</p>
-            <p>Summit <strong>only reads</strong> HealthKit data — it does not write anything back to HealthKit. You can change which categories you share at any time in <em>iOS Settings → Health → Data Access &amp; Devices → Summit</em>.</p>
+            <p>Summit reads the HealthKit data listed above with your permission. Summit also <strong>writes</strong> a limited set of data back to Apple Health by default — specifically, workouts you record or log in Summit (as Apple HealthKit workout sessions, including heart-rate and power samples from any paired Bluetooth device). The write feature is controlled by the "Apple Health Write" toggle in Summit's Settings; you can turn it off at any time, in which case Summit stores workouts locally only and Apple Health will not see them. You can change which categories Summit reads from or writes to Apple Health at any time in <em>iOS Settings → Health → Data Access &amp; Devices → Summit</em>. Summit does not write to any other HealthKit category (no HR independent of workouts, no sleep, no body metrics, no recovery data).</p>
 
             <h3>1.2 — Profile Information You Provide</h3>
             <p>During setup you may voluntarily provide your name, fitness level, training phase, goals, preferred activities, available equipment, coaching style preferences, and personal notes.</p>
@@ -392,7 +391,7 @@
                 <li>Sell your data to any third party</li>
                 <li>Use Apple HealthKit data for advertising, marketing, or data mining</li>
                 <li>Share Apple HealthKit data with third parties for advertising or marketing</li>
-                <li>Operate any analytics or tracking SDKs</li>
+                <li>Operate any advertising or behavioral-analytics SDKs (Sentry is included only for crash reporting — see Section 4.3)</li>
                 <li>Profile you for purposes unrelated to fitness coaching</li>
             </ul>
         </div>
@@ -422,22 +421,52 @@
             <h3>4.2 — Apple HealthKit</h3>
             <p>Summit reads HealthKit data based on the permissions you grant. Apple's own privacy policy governs HealthKit. Manage permissions anytime in iOS Settings.</p>
 
-            <h3>4.3 — No Other Third Parties</h3>
-            <p>Summit does not integrate with any advertising networks, analytics services, social media platforms, crash reporting tools, or other third-party SDKs beyond those listed above.</p>
+            <h3>4.3 — Sentry (Crash Reporting)</h3>
+            <p>Summit uses <strong>Sentry</strong> (sentry.io) for crash reporting and non-fatal error capture. When the App crashes or encounters a recoverable error, Sentry receives a diagnostic report so we can diagnose and fix bugs.</p>
+            <p>What Sentry receives:</p>
+            <ul>
+                <li>Crash stack traces (the code path that failed)</li>
+                <li>Non-identifying device info (iOS version, device model, app version, app environment — debug / TestFlight / production)</li>
+                <li>Non-identifying app state tags (e.g. current training-phase label, streak length) attached to the event for triage</li>
+                <li>Breadcrumb trails — recent app events (button taps, view transitions) preceding the error</li>
+                <li>Lightweight release-health pings (an indicator that the app session started, did not crash, and ended normally)</li>
+            </ul>
+            <p>What Sentry does <strong>not</strong> receive:</p>
+            <ul>
+                <li>Your name, email, Apple ID, or any other personally-identifying information</li>
+                <li>Your IP address (we explicitly disable Sentry's default PII collection)</li>
+                <li>Your HealthKit data, workout content, recovery data, coaching conversations, profile information, or location</li>
+                <li>Your Anthropic API key</li>
+            </ul>
+            <p>Sentry processes diagnostic data under their own privacy policy at <a href="https://sentry.io/privacy/">sentry.io/privacy</a>. Crash reporting is integral to maintaining App quality; it is not optional in the current version of Summit, and there is no in-app toggle to disable it.</p>
+
+            <h3>4.4 — Apple iCloud (Cross-Device Sync)</h3>
+            <p>Summit uses <strong>Apple iCloud</strong> (specifically CloudKit, Apple's cloud-database service for personal data) to sync your Summit data — workout history, training plans, profile, recovery logs, and coaching memory — across your own Apple devices when you are signed in to the same iCloud account on each device.</p>
+            <p>iCloud data is stored in your personal Apple iCloud account, not on any Summit-operated server. We do not have access to data stored in your iCloud account. Apple's own privacy policy governs iCloud data: <a href="https://www.apple.com/legal/privacy/">apple.com/legal/privacy</a>.</p>
+            <p>If you do not want Summit data to sync via iCloud, you can disable iCloud for Summit specifically in <em>iOS Settings → [Your Name] → iCloud → Apps Using iCloud → Summit</em>. When iCloud sync is off, Summit stores data only on the local device and your devices will not share data with each other.</p>
+
+            <h3>4.5 — No Other Third Parties</h3>
+            <p>Beyond Anthropic (AI coaching), Apple (HealthKit and iCloud), and Sentry (crash reporting), Summit does not integrate with any advertising networks, analytics services, social media platforms, or other third-party SDKs.</p>
         </div>
 
         <!-- Section 5 -->
         <div class="section-block">
             <h2><span class="num">5</span> Data Storage &amp; Security</h2>
 
-            <h3>5.1 — Local-Only Storage</h3>
-            <p><strong>Summit does not operate any server, cloud database, or remote backend.</strong> All Summit data is stored locally on your device. Your data does not leave your device except when sent to Anthropic's Claude API for coaching generation.</p>
+            <h3>5.1 — Storage</h3>
+            <p><strong>Summit does not operate its own server, cloud database, or remote backend.</strong> Your Summit data lives in two places: (1) on your iOS device, in Apple's SwiftData local storage, and (2) in your personal Apple iCloud account, via Apple's CloudKit service, so that your data syncs across your own Apple devices when iCloud is enabled. Apple's iCloud and CloudKit are governed by Apple's own privacy policy. We do not have access to your iCloud-stored data.</p>
+            <p>Your data leaves your device and iCloud account only in three circumstances:</p>
+            <ul>
+                <li>When portions are sent to Anthropic's Claude API to generate coaching content (Section 2.1)</li>
+                <li>When diagnostic / crash reports are sent to Sentry if the App crashes or errors (Section 4.3)</li>
+                <li>When workouts are written to Apple Health, if you have the Apple Health Write feature enabled (Section 1.1)</li>
+            </ul>
 
             <h3>5.2 — API Key Security</h3>
             <p>If you provide a Claude API key, it is stored in the iOS Keychain, which uses hardware-backed encryption on supported devices. The key is never stored in plaintext and is used only to authenticate requests to Anthropic.</p>
 
             <h3>5.3 — Data in Transit</h3>
-            <p>All data transmitted to Anthropic's Claude API is sent over HTTPS using TLS-encrypted connections.</p>
+            <p>All data transmitted to third parties (Anthropic, Sentry, Apple iCloud) is sent over HTTPS using TLS-encrypted connections.</p>
         </div>
 
         <!-- Section 6 -->
@@ -468,9 +497,12 @@
             <p>Reset your profile information at any time from within <em>Summit → Settings</em>.</p>
 
             <h3>7.5 — Delete All Data</h3>
-            <p>Delete all Summit data by deleting the App from your device. Uninstalling Summit removes all locally stored data — including your profile, workout history, recovery logs, coaching conversations, and any stored API key.</p>
+            <p>Delete all Summit data by deleting the App from your device. Uninstalling Summit removes all locally stored data on that device. If you have iCloud sync enabled, your data will also remain in your Apple iCloud account until you sign in to Summit on another device (in which case it restores), disable Summit's access to iCloud in <em>iOS Settings → [Your Name] → iCloud → Apps Using iCloud → Summit</em>, or delete your iCloud account.</p>
 
-            <h3>7.6 — Questions</h3>
+            <h3>7.6 — Disable Apple Health Write</h3>
+            <p>Toggle off "Apple Health Write" in Summit's Settings if you do not want Summit to write workouts to Apple Health. Existing entries Summit previously wrote to Apple Health remain as they are — you can remove them via the Apple Health app.</p>
+
+            <h3>7.7 — Questions</h3>
             <p>Contact us at <a href="mailto:summit.training.app@gmail.com">summit.training.app@gmail.com</a> with any questions about your data.</p>
         </div>
 
