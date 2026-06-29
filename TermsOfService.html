@@ -403,7 +403,7 @@
     </div>
     <div class="date-bar">
         <span>Effective Date: April 7, 2026</span>
-        <span>Last Updated: June 3, 2026</span>
+        <span>Last Updated: June 29, 2026</span>
     </div>
 
     <!-- ── Body ── -->
@@ -488,24 +488,15 @@
             <h3>4.1 — Age Requirement</h3>
             <p>You must be at least 18 years old to use Summit. By using Summit, you represent and warrant that you are 18 years of age or older. If you are under 18, do not download or use Summit.</p>
 
-            <h3>4.2 — API Key</h3>
-            <p>Summit may require a Claude API key from Anthropic to function. If you provide your own API key, you are responsible for:</p>
-            <ul>
-                <li>Keeping your API key confidential</li>
-                <li>Any usage charges incurred through Anthropic's API as a result of using Summit</li>
-                <li>Complying with Anthropic's terms of service for API usage</li>
-            </ul>
-            <p>Summit stores your API key in the iOS Keychain and uses it solely to authenticate requests to Anthropic on your behalf. Summit is not responsible for charges incurred through your Anthropic account.</p>
-
-            <h3>4.3 — Subscription, Trial, Billing, and Refunds</h3>
-            <p>Summit offers an auto-renewing monthly subscription that includes a quota of AI coach interactions per billing month. Bringing your own Anthropic Claude API key (Section 4.2) is an alternative; you do not need a subscription if you supply your own key.</p>
-            <p><strong>Free Trial.</strong> New subscribers may be eligible for a free introductory trial period (two weeks at launch; the current trial length is shown in-App on the subscription screen at the time you subscribe). The trial begins when you start the subscription. If you do not cancel before the trial ends, the subscription converts automatically to a paid subscription at the price shown on the subscription screen, and you will be charged through your Apple ID.</p>
-            <p><strong>Auto-Renewal.</strong> Subscriptions auto-renew at the end of each billing period at the then-current rate unless you cancel at least 24 hours before the end of the current period. The renewal charge is processed by Apple within 24 hours before the end of the current period.</p>
-            <p><strong>Managing or Cancelling.</strong> You can view, manage, or cancel your subscription at any time in <em>iOS Settings → [Your Name] → Subscriptions → Summit</em>. Cancelling stops future auto-renewal; you keep access to subscriber features until the end of the current paid period. Summit cannot cancel or refund a subscription on your behalf — these actions are handled by Apple.</p>
-            <p><strong>Price Changes.</strong> If we change the subscription price, Apple will notify you in advance through the standard App Store mechanism. You may accept the new price or cancel before the change takes effect.</p>
-            <p><strong>Refunds.</strong> All billing is handled by Apple under the standard Apple Media Services terms. Refunds, if any, are issued by Apple at Apple's discretion under those terms — Summit does not directly issue refunds. Refund requests are made through <em>reportaproblem.apple.com</em>.</p>
-            <p><strong>Coach Message Quota.</strong> Each monthly billing period includes a quota of AI coach interactions, as displayed in the App. If you exhaust the quota before the period ends, AI coach interactions will be paused for the remainder of that period unless you supply your own Anthropic API key. The quota resets at the start of each new billing period.</p>
-            <p><strong>Subscriptions Are Required for Some Features Only.</strong> Subscription gives you access to AI coaching features. Other App features (workout logging, recovery logging, history viewing) do not require a subscription.</p>
+            <h3>4.2 — Coaching Credits, Purchases, and Refunds</h3>
+            <p>Summit's AI coaching features are gated by a credit system. All purchases are processed by Apple through the App Store.</p>
+            <p><strong>Unlock Purchase.</strong> To access AI coaching, you must complete a one-time non-consumable unlock purchase (<strong>"Summit Coach Unlock,"</strong> currently $9.99 USD). This unlock is permanent and is tied to your Apple ID — it can be restored on any device signed in with the same Apple ID at no additional charge. The unlock includes <strong>75 starter coaching credits</strong>.</p>
+            <p><strong>Credit Top-Ups.</strong> Once unlocked, additional credits can be purchased in consumable packs (currently $4.99 USD / 100 credits). You may purchase as many packs as you wish; there is no subscription and no auto-renewal.</p>
+            <p><strong>Credit Usage.</strong> Each AI coach message you send consumes one credit. Credits are deducted when you send a message, not when a response is received. The App displays your current credit balance at all times. Workout logging, recovery logging, history, and all non-AI features remain fully available regardless of credit balance.</p>
+            <p><strong>Credits Do Not Expire.</strong> Purchased credits have no expiration date and carry forward indefinitely.</p>
+            <p><strong>No Subscription, No Auto-Renewal.</strong> Summit does not offer an auto-renewing subscription. There is no recurring charge. You are charged only when you initiate a purchase.</p>
+            <p><strong>Restoring Purchases.</strong> If you delete and reinstall the App or switch devices, restore your unlock purchase via the in-App restore option. Credits are stored server-side and restore automatically when you are signed in through Apple.</p>
+            <p><strong>Refunds.</strong> All billing is handled by Apple under the standard Apple Media Services terms. Refunds, if any, are issued by Apple at Apple's discretion — Summit does not directly issue refunds. Refund requests are submitted through <em>reportaproblem.apple.com</em>. Credits consumed prior to a refund request may not be restored.</p>
         </div>
 
         <!-- Section 5 -->
@@ -552,8 +543,8 @@
             <h2><span class="num">7</span> Privacy</h2>
             <p>Summit's collection, use, and sharing of your data is governed by our <strong>Privacy Policy</strong>. By using Summit, you agree to the data practices described in the Privacy Policy.</p>
             <ul>
-                <li>Your health and fitness data is sent to Anthropic's Claude API to generate coaching content</li>
-                <li>Your data is stored on your device and (if iCloud is enabled) in your personal Apple iCloud account — Summit operates no server of its own</li>
+                <li>Your health and fitness data is sent through the Summit gateway to Anthropic's Claude API to generate coaching content</li>
+                <li>Your data is stored on your device and (if iCloud is enabled) in your personal Apple iCloud account; Summit also operates a cloud gateway that stores your account ID, credit balance, and purchase records — but not your health data</li>
                 <li>Anonymized crash and error reports are sent to Sentry so we can diagnose App failures (no health data, no name, no IP)</li>
                 <li>Summit does not use your data for advertising and does not sell your data</li>
                 <li>HealthKit data is not used for advertising and is not sold to third parties</li>
@@ -573,6 +564,18 @@
 
             <h3>8.3 — Sentry (Crash Reporting)</h3>
             <p>Summit uses Sentry's crash-reporting service to receive diagnostic reports when the App crashes or encounters non-fatal errors. Sentry receives anonymized stack traces, device model, OS version, app version, breadcrumb trails, and non-identifying app-state tags. Sentry does not receive your name, IP address, HealthKit data, workout content, or coaching conversations. Crash reporting is integral to App quality and is not user-configurable. Your use of Summit is subject to Sentry's privacy policy at <a href="https://sentry.io/privacy/">sentry.io/privacy</a>.</p>
+
+            <h3>8.4 — Summit Gateway</h3>
+            <p>Summit operates a cloud gateway (<code>api.summitsystems.app</code>) that acts as an intermediary between the App and Anthropic's Claude API. The gateway manages your account, credit balance, and purchase verification with Apple. It does not persistently store your health data, workout content, or coaching conversations — these are relayed to Anthropic transiently to generate coaching responses and are not retained on the gateway after the response is returned.</p>
+
+            <h3>8.5 — Strava (Optional)</h3>
+            <p>If you connect a Strava account, Summit uses Strava's API (routed through the Summit gateway) to import your Strava activities. Strava is an independent third party. Your use of Strava's services is subject to Strava's terms of service and privacy policy at <a href="https://www.strava.com">strava.com</a>. You may disconnect Strava at any time from within Summit's Settings.</p>
+
+            <h3>8.6 — WHOOP (Optional)</h3>
+            <p>If you connect a WHOOP device, Summit uses WHOOP's API (routed through the Summit gateway) to import recovery and strain data. WHOOP is an independent third party. Your use of WHOOP's services is subject to WHOOP's terms of service and privacy policy at <a href="https://www.whoop.com">whoop.com</a>. You may disconnect WHOOP at any time from within Summit's Settings.</p>
+
+            <h3>8.7 — Polar (Optional)</h3>
+            <p>If you connect a Polar device, Summit uses Polar's API (routed through the Summit gateway) to import training and heart rate data. Polar is an independent third party. Your use of Polar's services is subject to Polar's terms of service and privacy policy at <a href="https://www.polar.com">polar.com</a>. You may disconnect Polar at any time from within Summit's Settings.</p>
         </div>
 
         <!-- Section 9 -->
